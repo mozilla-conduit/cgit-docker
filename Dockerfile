@@ -31,6 +31,10 @@ RUN make && make install
 
 FROM nginx:${NGINX_VERSION}-alpine${ALPINE_VERSION}
 
+ENV GIT_USER=lando
+# 'password'
+# generate with `htpasswd -n user | cut -d: -f2`
+ENV GIT_PASSWORD='$apr1$syi9IAPx$lGAixLm5WXtzEWR.fA.cS0'
 
 # mailcap - provides /etc/mime.types
 RUN apk add --no-cache \
@@ -52,6 +56,8 @@ RUN apk add --no-cache \
 ENV CGIT_APP_USER=nginx
 
 COPY ./rootfs/ /
+COPY ./auth-example/etc/nginx/git-http-backend_write.conf /etc/nginx/git-http-backend_write.conf
+COPY ./auth-example/etc/nginx/htpasswd.template /etc/nginx/templates/htpasswd.template
 COPY --from=build /opt/cgit /opt/cgit
 
 VOLUME ["/opt/git"]
