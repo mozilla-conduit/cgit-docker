@@ -1,3 +1,7 @@
+# This is a mirror
+
+This repo is a mirror of [Upstream], with local modifications to enable authenticated push by default.
+
 # Cgit Docker
 
 [![GitHub](https://img.shields.io/github/license/LuqueDaniel/cgit-docker?style=flat-square)](https://github.com/LuqueDaniel/cgit-docker/blob/main/LICENSE)
@@ -67,3 +71,4 @@ echo "CHANGED" >> /tmp/nginx-cloned/README.md
 * [Cgit README](https://git.zx2c4.com/cgit/tree/README)
 * [Cgit configuration](https://git.zx2c4.com/cgit/tree/cgitrc.5.txt)
 * [cgit - ArchWiki](https://wiki.archlinux.org/title/Cgit)
+* [Upstream](https://github.com/LuqueDaniel/cgit-docker)

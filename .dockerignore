@@ -1,3 +1,4 @@
 **
+!auth-example/**
 !rootfs/**
 !cgit_build.conf
